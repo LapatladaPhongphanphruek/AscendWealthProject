@@ -1,7 +1,8 @@
 # AscendWealthProject
 วิธีการ run -> run ที่ path index/templates/index.html
+
 คำอธิบาย :
-  สร้างด้วยภาษา html, typescripts และเมื่อ compile typescripts file (TSForIndex.ts) แล้วจะได้ JavaScript file (TSForIndex.js) ซึ่ง html file (index.html) จะทำการเรียก JavaScript file (TSForIndex.js) เพื่อใช้  function ที่เขียนไว้ใน typescripts file (TSForIndex.ts) โดยหลักการทำงานของแต่ละ function คือ เริ่มจาก declare ค่าต่าง ๆ
+สร้างด้วยภาษา html, typescripts และเมื่อ compile typescripts file (TSForIndex.ts) แล้วจะได้ JavaScript file (TSForIndex.js) ซึ่ง html file (index.html) จะทำการเรียก JavaScript file (TSForIndex.js) เพื่อใช้  function ที่เขียนไว้ใน typescripts file (TSForIndex.ts) โดยหลักการทำงานของแต่ละ function คือ เริ่มจาก declare ค่าต่าง ๆ
 
 จะสังเกตได้ว่า HTML file บรรทัดที่ 13 มีการกำหนด script เพื่อเรียกใช้ฟังก์ชันจาก TSForIndex.js (compile มาจาก TSForIndex.ts) โดยมีการกำหนด defer เผื่อในกรณีที่มี JavaScript หลาย files defer จะเป็นการบอกให้เรียงตามบรรทัดที่เขียนไว้ ถ้าหากไม่ได้ตั้งไว้ default จะทำงาน JavaScript หลาย files เป็นแบบ parallel (ถูกโหลดไปทำงานพร้อม ๆ กัน) 
 แต่ละปุ่มและ input box จะมีกำหนด id ของตนเอง ดังนั้นเราจะใช้ id นี้ในการสร้างตัวแปรใน typescripts file โดย const คือการกำหนดตัวแปรที่ไม่ต้องการให้เปลี่ยนค่าได้ ตามด้วยชื่อตัวแปร = document.getElementById(“id”)! as HTMLInputElement; เป็นการบอกว่าตัวแปรที่เรียกตาม id มานั้นเรียกจาก HTML เช่น size เป็นตัวแปรที่เรียกจาก input box id = “submit”
